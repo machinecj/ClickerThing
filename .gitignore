@@ -52,3 +52,9 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# VS cache/options directory
+.vs/
+ClickerThing/Properties/PublishProfiles/FolderProfile.pubxml
+ClickerThing/Properties/PublishProfiles/FolderProfile.pubxml.user
+ClickerThing/ClickerThing.csproj.user

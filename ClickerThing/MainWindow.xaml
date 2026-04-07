@@ -1,0 +1,76 @@
+﻿<Window x:Class="ClickerThing.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClickerThing"
+        mc:Ignorable="d"
+        Title="ClickerThing" Height="150" Width="400" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0">
+            <MenuItem Header="File">
+                <MenuItem Name="ExitMenuItem" Header="Exit" Click="ExitMenuItem_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                <Label Content="Mouse Button"/>
+                <ComboBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5">
+                    <ComboBoxItem Content="Left Click" IsSelected="True"/>
+                    <ComboBoxItem Content="Right Click"/>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" VerticalAlignment="top">
+                <Label Content="Interval"/>
+                <TextBox Name="IntervalTextBox" Margin="5" Text="{Binding Interval}" ToolTip="Interval in Seconds. Lower range if a range value is set."/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                <Label Content="Range"/>
+                <TextBox Name="RangeTextBox" Margin="5" Text="{Binding Range}" ToolTip="Upper range in Seconds. 0 for no range."/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                <Label Content="Duration"/>
+                <TextBox Name="DurationTextBox" Margin="5" Text="{Binding Duration}" ToolTip="In Seconds. 0 for indefinite."/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                <Label Content="Delay"/>
+                <TextBox Name="DelayTextBox" Margin="5" Text="{Binding Delay}" ToolTip="In Seconds"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                <Label Content="Start/Stop"/>
+                <Button Name="StartButton" Content="Start" HorizontalAlignment="Center" VerticalAlignment="Center" Click="StartButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StatusBar Grid.Row="2" FontSize="10" HorizontalAlignment="Stretch" HorizontalContentAlignment="Right">
+            <StatusBarItem>
+                <TextBlock Text="Click #:"/>
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBlock Text="0000"/>
+            </StatusBarItem>
+            <Separator/>
+            <StatusBarItem>
+                <TextBlock Text="Time Remaining:"/>
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBlock Text="00:00"/>
+            </StatusBarItem>
+        </StatusBar>
+        
+        
+
+    </Grid>
+</Window>
